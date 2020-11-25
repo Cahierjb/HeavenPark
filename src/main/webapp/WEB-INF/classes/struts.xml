@@ -10,7 +10,7 @@
             <result name="failed">views/login/login.jsp</result>
         </action>
         <action name="Welcome" class="heavenpark.controller.LinkAction">
-            <result name="failed">views/welcomeUser.jsp</result>
+            <result name="success">views/welcomeUser.jsp</result>
         </action>
     </package>
 </struts>

@@ -1,9 +1,9 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
+<<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-	<title>Login In</title>
+	<title>Login V1</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -32,14 +32,13 @@
 					<img src="images/img-01.png" alt="IMG">
 				</div>
 
-				<s:form action="LoginProcess">
+				<s:form action="LoginProcess" class="login100-form validate-form">
 					<span class="login100-form-title">
 						Member Login
 					</span>
 
-
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<s:textfield name="email" label="Email" />
+						<input class="input100" type="text" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -47,7 +46,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<s:password name="password" label="Password" />
+						<input class="input100" type="password" name="pass" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -55,7 +54,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<s:submit value ="login"/>
+						<s:submit value="login" class="login100-form-btn"/>
 					</div>
 
 					<div class="text-center p-t-12">
@@ -96,3 +95,7 @@
 		})
 	</script>
 <!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
