@@ -1,5 +1,7 @@
 package heavenpark.controller.db_access;
 
+import java.awt.Color;
+
 import heavenpark.model.*;
 
 public interface ListeRequetes {
@@ -21,7 +23,7 @@ public interface ListeRequetes {
             "WHERE idUser = '?'";
 
     String Create_Utilisateur =
-            "INSERT INTO utilisateur (nom, prenom, naissance, email, password) VALUES ('?','?','?','?','?','?')";
+            "INSERT INTO utilisateur (nom, prenom, naissance, email, password) VALUES ('?','?','?','?','?')";
 
     String Select_Utilisateur =
             "SELECT * "+
@@ -30,67 +32,65 @@ public interface ListeRequetes {
 
     //Place
     String Exist_Place =
-            "SELECT idUser " +
+            "SELECT idPlace " +
                     "FROM place where idPlace = '?'";
 
     String Update_Place =
-            "UPDATE utilisateur"+
-                    "SET prenom = ''?''"+
-                    "SET nom = ''?''"+
-                    "SET naissance = ''?''"+
-                    "SET email = ''?''" +
-                    "SET password = ''?''" +
-                    "WHERE idUser = '?'";
+            "UPDATE Place"+
+                    "SET Pris = ''?''"+
+                    "SET Etage = ''?''"+
+                    "SET Allee = ''?''" +
+                    "SET idParking = ''?''" +
+                    "WHERE idPlace = '?'";
 
     String Create_Place =
-            "INSERT INTO utilisateur (nom, prenom, naissance, email, password) VALUES ('?','?','?','?','?','?')";
+            "INSERT INTO Place (idPlace, Pris, Etage, Allee, idParking) VALUES ('?','?','?','?','?')";
 
     String Select_Place =
             "SELECT * "+
-                    "FROM utilisateur "+
-                    "WHERE idUser = '?'";
+                    "FROM Placer "+
+                    "WHERE idPlace = '?'";
 
     //Parking
     String Exist_Parking =
-            "SELECT idUser " +
-                    "FROM utilisateur where idUser = '?'";
+            "SELECT idParking " +
+                    "FROM Parking where idParking = '?'";
 
     String Update_Parking =
-            "UPDATE utilisateur"+
-                    "SET prenom = ''?''"+
-                    "SET nom = ''?''"+
-                    "SET naissance = ''?''"+
-                    "SET email = ''?''" +
-                    "SET password = ''?''" +
-                    "WHERE idUser = '?'";
+            "UPDATE Parking"+
+                    "SET nom= ''?''"+
+                    "SET nbEtage = ''?''"+
+                    "SET nbAllee = ''?''"+
+                    "SET placeMax = ''?''" +
+                    "WHERE idParking = '?'";
 
     String Create_Parking =
-            "INSERT INTO utilisateur (nom, prenom, naissance, email, password) VALUES ('?','?','?','?','?','?')";
+            "INSERT INTO Parking (idParking, nom, nbEtage, placeMax) VALUES ('?','?','?','?')";
 
     String Select_Parking =
             "SELECT * "+
-                    "FROM utilisateur "+
-                    "WHERE idUser = '?'";
+                    "FROM Parking "+
+                    "WHERE idParking = '?'";
 
     //Voiture
     String Exist_Voiture =
-            "SELECT idUser " +
-                    "FROM utilisateur where idUser = '?'";
+            "SELECT idVoiture " +
+                    "FROM Voiture where idVoiture = '?'";
 
-    String Update_Voiture =
-            "UPDATE utilisateur"+
-                    "SET prenom = ''?''"+
-                    "SET nom = ''?''"+
-                    "SET naissance = ''?''"+
-                    "SET email = ''?''" +
-                    "SET password = ''?''" +
-                    "WHERE idUser = '?'";
+    String Update_Voiture = 
+            "UPDATE Voiture"+
+                    "SET immatriculation = ''?''"+
+                    "SET couleur = ''?''"+
+                    "SET marques = ''?''"+
+                    "SET modele = ''?''" +
+                    "SET type = ''?''" +
+                    "WHERE idVoiture = '?'";
 
     String Create_Voiture =
-            "INSERT INTO utilisateur (nom, prenom, naissance, email, password) VALUES ('?','?','?','?','?','?')";
+            "INSERT INTO Voiture (immatriculation, couleur, marques, modele, type) VALUES ('?','?','?','?','?')";
 
     String Select_voiture =
             "SELECT * "+
-                    "FROM utilisateur "+
-                    "WHERE idUser = '?'";
+                    "FROM Voiture "+
+                    "WHERE idVoiture = '?'";
 }
