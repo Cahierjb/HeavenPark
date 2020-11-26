@@ -6,7 +6,7 @@ import heavenpark.model.*;
 
 import java.sql.*;
 
-public final class db_operations implements ListeRequetes {
+public final class DB_Operations implements ListeRequetes {
 
     private static Connection con = null;
 
@@ -20,7 +20,7 @@ public final class db_operations implements ListeRequetes {
         }
     }
 
-    private boolean Ecriture(PreparedStatement requetePrepare){
+    private static boolean Ecriture(PreparedStatement requetePrepare){
         try {
             requetePrepare.executeUpdate();
             return true;
@@ -31,7 +31,7 @@ public final class db_operations implements ListeRequetes {
         }
     }
 
-    private ResultSet Lecture(PreparedStatement requetePrepare){
+    private static ResultSet Lecture(PreparedStatement requetePrepare){
         ResultSet resultat = null;
         try {
             ResultSet rs =  requetePrepare.executeQuery();
@@ -44,7 +44,7 @@ public final class db_operations implements ListeRequetes {
 
 
 
-    public boolean sauvegarder(Utilisateur unUtilisateur){
+    public static boolean Sauvegarder(Utilisateur unUtilisateur){
         try {
             PreparedStatement requetePrepare = null;
             boolean exist = false;
@@ -85,4 +85,24 @@ public final class db_operations implements ListeRequetes {
         }
     }
 
+    public Utilisateur ChargerUtilisateur(int idUtilisateur) {
+        PreparedStatement requetePrepare = null;
+        Utilisateur newUser = null;
+        try {
+            requetePrepare = con.prepareStatement(Select_Utilisateur);
+            requetePrepare.setInt(1, idUtilisateur);
+            ResultSet resultatRequete = Lecture(requetePrepare);
+            while (resultatRequete.next()) {
+                String nom = resultatRequete.getString(1);
+                String prenom = resultatRequete.getString(2);
+                Date naissance = resultatRequete.getDate(3);
+                String email = resultatRequete.getString(4);
+                newUser = new Utilisateur(idUtilisateur, nom, prenom, naissance, email);
+            }
+        } catch (Exception e) {
+            System.out.println("Chargement de l'utilidsateur " + idUtilisateur + " impossible");
+            e.printStackTrace();
+        }
+        return  newUser;
+    }
 }

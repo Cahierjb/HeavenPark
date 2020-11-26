@@ -27,7 +27,15 @@ public class Utilisateur {
             this.password = password;
         }
 
-        //Getter et Setter
+        public Utilisateur(int idUser, String nom, String prenom, Date naissance, String email) {
+            this.idUser = idUser;
+            this.nom = nom;
+            this.prenom = prenom;
+            this.naissance = naissance;
+            this.email = email;
+        }
+
+    //Getter et Setter
         public String getNom() {
             return nom;
         }

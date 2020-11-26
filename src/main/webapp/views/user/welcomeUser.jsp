@@ -9,7 +9,7 @@
    <body>
       <h1>Struts2 Hello World Example</h1>
       <h4>
-         Hello <s:property value="email"/>
+         Hello <s:property value="nom"/>
       </h4>
    </body>
 </html>
