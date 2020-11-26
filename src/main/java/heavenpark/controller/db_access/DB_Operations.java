@@ -11,7 +11,7 @@ public final class DB_Operations implements ListeRequetes {
     private static Connection con = null;
 
     //Etablissement de la connection
-    private void EtablirConnexion(){
+    private static void EtablirConnexion(){
         try{
             con = ConnectionProvider.getCon();
         }catch (Exception e){
@@ -19,6 +19,17 @@ public final class DB_Operations implements ListeRequetes {
             System.exit(1);
         }
     }
+
+    private static void CoupeConnexion(){
+        try{
+            ConnectionProvider.EndConnection();
+        }catch (Exception e){
+            System.out.println("Impossible d'etablir la connexion avec la base de données");
+            System.exit(1);
+        }
+    }
+
+
 
     private static boolean Ecriture(PreparedStatement requetePrepare){
         try {
@@ -46,24 +57,25 @@ public final class DB_Operations implements ListeRequetes {
 
     public static boolean Sauvegarder(Utilisateur unUtilisateur){
         try {
+            EtablirConnexion();
             PreparedStatement requetePrepare = null;
             boolean exist = false;
-
+            System.out.println("test0");
             //Verifaction si Update ou Create
             requetePrepare = con.prepareStatement(Exist_Utilisateur);
             requetePrepare.setInt(1, unUtilisateur.getIdUser());
             ResultSet resultat = Lecture(requetePrepare);
             if (resultat.next()) exist = true;
-
+            System.out.println("test1");
             //Si l'utilisateur n'existe pas on le créé
-            if (!exist){
+            if (!exist) {
                 requetePrepare = con.prepareStatement(Create_Utilisateur);
                 requetePrepare.setString(1, unUtilisateur.getNom());
                 requetePrepare.setString(2, unUtilisateur.getPrenom());
                 requetePrepare.setDate(3, unUtilisateur.getNaissance());
                 requetePrepare.setString(4, unUtilisateur.getEmail());
                 requetePrepare.setString(5, unUtilisateur.getPassword());
-                if( Ecriture(requetePrepare) ) System.out.println("Utilisateur créé");
+                if (Ecriture(requetePrepare)) System.out.println("Utilisateur créé");
                 else System.out.println("L'utilisateur n'a pas pu être créé");
             }
             else{//sinon on l'update
@@ -77,9 +89,12 @@ public final class DB_Operations implements ListeRequetes {
                 if( Ecriture(requetePrepare)) System.out.println("Utilisateur modifié");
                 else System.out.println("L'utilisateur n'a pas pu être modifié");
             }
+            System.out.println("test2");
+            requetePrepare.close();
+            CoupeConnexion();
             return true;
         } catch (Exception e) {
-            System.out.println("Sauvegarde de la Place " + unUtilisateur.toString() + " impossible" );
+            System.out.println("Sauvegarde de l'utilisateur " + unUtilisateur.toString() + " impossible" );
             e.printStackTrace();
             return false;
         }
@@ -89,6 +104,7 @@ public final class DB_Operations implements ListeRequetes {
         PreparedStatement requetePrepare = null;
         Utilisateur newUser = null;
         try {
+            EtablirConnexion();
             requetePrepare = con.prepareStatement(Select_Utilisateur);
             requetePrepare.setInt(1, idUtilisateur);
             ResultSet resultatRequete = Lecture(requetePrepare);
@@ -99,6 +115,8 @@ public final class DB_Operations implements ListeRequetes {
                 String email = resultatRequete.getString(4);
                 newUser = new Utilisateur(idUtilisateur, nom, prenom, naissance, email);
             }
+            requetePrepare.close();
+            CoupeConnexion();
         } catch (Exception e) {
             System.out.println("Chargement de l'utilidsateur " + idUtilisateur + " impossible");
             e.printStackTrace();

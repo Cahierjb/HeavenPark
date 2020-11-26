@@ -9,8 +9,8 @@
             <result name="success">views/user/welcomeUser.jsp</result>
             <result name="failed">views/login/login.jsp</result>
         </action>
-        <action name="Register" >
-        	<result>views/login/register.jsp</result>
+        <action name="Register" class="heavenpark.controller.user.CreateUser">
+        	<result>views/login/login.jsp</result>
         </action>
         <action name="Welcome" class="heavenpark.controller.LinkAction">
             <result name="success">views/user/welcomeUser.jsp</result>

@@ -42,6 +42,8 @@ public class LoginCheck {
 
             ResultSet rs=ps.executeQuery();
             status=rs.next();
+            ps.close();
+            ConnectionProvider.EndConnection();
 
         }catch(Exception e){
             e.printStackTrace();

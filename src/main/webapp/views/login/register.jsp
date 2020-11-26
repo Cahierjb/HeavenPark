@@ -35,7 +35,7 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">DONNEZ NOUS VOS INFOS :)</h2>
-                    <form method="POST">
+                    <s:form action="Register">
                         <div class="input-group">
                         	<div class="row row-space">
                         		<div class="col-2">
@@ -66,9 +66,9 @@
                         </div>
                         
                         <div class="p-t-20">
-                            <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                           <s:submit value="S'enregistrer" class="btn btn--radius btn--green"/>
                         </div>
-                    </form>
+                    </s:form>
                 </div>
             </div>
         </div>

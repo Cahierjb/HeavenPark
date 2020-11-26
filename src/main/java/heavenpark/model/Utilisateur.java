@@ -15,11 +15,12 @@ public class Utilisateur {
         private List<Vehicule> cliVehicules;
 
         //Constructor
-        public Utilisateur(String nom, String prenom, Date naissance, String email) {
+        public Utilisateur(String nom, String prenom, Date naissance, String email, String password) {
             this.nom = nom;
             this.prenom = prenom;
             this.naissance = naissance;
             this.email = email;
+            this.password = password;
         }
 
         public Utilisateur(String email, String password) {
