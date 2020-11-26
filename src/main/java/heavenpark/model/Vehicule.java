@@ -2,7 +2,7 @@ package heavenpark.model;
 
 import java.awt.*;
 
-public class vehicule {
+public class Vehicule {
 
     //Attributs
     private String immatriculation;
@@ -10,9 +10,11 @@ public class vehicule {
     private String marques;
     private String modele;
     private String type;
+    private int idUser;
+    private int idPlace;
 
     //Constructor
-    public vehicule(String immatriculation, Color couleur, String marques, String modele, String type) {
+    public Vehicule(String immatriculation, Color couleur, String marques, String modele, String type) {
         this.immatriculation = immatriculation;
         this.couleur = couleur;
         this.marques = marques;

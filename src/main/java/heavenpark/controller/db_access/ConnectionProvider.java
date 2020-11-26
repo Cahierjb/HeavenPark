@@ -16,4 +16,15 @@ public class ConnectionProvider {
         return con;
     }
 
+    //Libération des ressources
+    public static boolean EndConnection() {
+        try {
+            con.close();
+            return true;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+
 }

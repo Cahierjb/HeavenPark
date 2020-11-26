@@ -1,7 +1,6 @@
 package heavenpark.controller.login;
 
 import heavenpark.controller.db_access.*;
-import heavenpark.model.User;
 
 import java.sql.*;
 
@@ -29,7 +28,7 @@ public class LoginCheck {
 
     //Methodes
     public String execute(){
-        System.out.println("user_name : " + getEmail() );
+        System.out.println("email : " + getEmail() );
         String result="failed";
         boolean status=false;
         try{

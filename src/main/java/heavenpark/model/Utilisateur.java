@@ -3,25 +3,26 @@ package heavenpark.model;
 import java.sql.Date;
 import java.util.List;
 
-public class User {
+public class Utilisateur {
 
         //Attributs
+        private int idUser;
         private String nom;
         private String prenom;
         private Date naissance;
         private String email;
         private String password;
-        private List<vehicule> cliVehicules;
+        private List<Vehicule> cliVehicules;
 
         //Constructor
-        public User(String nom, String prenom, Date naissance, String email) {
+        public Utilisateur(String nom, String prenom, Date naissance, String email) {
             this.nom = nom;
             this.prenom = prenom;
             this.naissance = naissance;
             this.email = email;
         }
 
-        public User(String email, String password) {
+        public Utilisateur(String email, String password) {
             this.email = email;
             this.password = password;
         }
@@ -59,11 +60,11 @@ public class User {
             this.email = email;
         }
 
-        public List<vehicule> getCliVehicules() {
+        public List<Vehicule> getCliVehicules() {
             return cliVehicules;
         }
 
-        public void setCliVehicules(List<vehicule> cliVehicules) {
+        public void setCliVehicules(List<Vehicule> cliVehicules) {
             this.cliVehicules = cliVehicules;
         }
 
@@ -75,7 +76,15 @@ public class User {
             this.password = password;
         }
 
-        //Methodes
+        public int getIdUser() {
+        return idUser;
+    }
+
+        public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+
+    //Methodes
 }
 
 
