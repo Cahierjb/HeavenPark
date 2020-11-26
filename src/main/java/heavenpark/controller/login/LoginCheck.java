@@ -4,6 +4,8 @@ import heavenpark.controller.db_access.*;
 
 import java.sql.*;
 
+import static heavenpark.controller.db_access.ListeRequetes.*;
+
 public class LoginCheck {
 
     //Attributs recupéré de la page web
@@ -28,19 +30,16 @@ public class LoginCheck {
 
     //Methodes
     public String execute(){
-        System.out.println("email : " + getEmail() );
         String result="failed";
         boolean status=false;
         try{
             Connection con = ConnectionProvider.getCon();
 
-            PreparedStatement ps=con.prepareStatement(
-                    "select * from user where email= '?' and password= '?'");
+            PreparedStatement ps = con.prepareStatement(login);
 
             ps.setString(1, getEmail());
             ps.setString(2, getPassword());
 
-            System.out.println(ps.toString());
             ResultSet rs=ps.executeQuery();
             status=rs.next();
 

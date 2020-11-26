@@ -6,7 +6,7 @@ import heavenpark.model.*;
 
 public interface ListeRequetes {
 
-    String Exemple = "select * from user where email= ? and password= ?";
+    String login = "select * from user where email= ? and password= ? ";
 
     //Utilisateur
     String Exist_Utilisateur =

@@ -9,7 +9,10 @@ public class ConnectionProvider {
         try{
             Class.forName(DRIVER);
             con=DriverManager.getConnection(CONNECTION_URL,USERNAME,PASSWORD);
-        }catch(Exception e){}
+            con.createStatement().executeUpdate("use j2ee_instance");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     public static Connection getCon(){
