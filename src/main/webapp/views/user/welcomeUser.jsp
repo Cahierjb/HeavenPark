@@ -37,7 +37,7 @@
 					<div class="booking-form">
 						<div class="form-header">
 							<h1>HeavenPark</h1>
-							<span class="form-label">Une escapade en toute tranquilité</span>
+							<span class="form-label">Pour profiter d'une escapade en toute tranquillité</span>
 						</div>
 						<form>
 							<div class="row">
