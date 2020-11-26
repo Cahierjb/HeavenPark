@@ -17,7 +17,7 @@ public class Parking {
 	private Place[][] mapParking;
 
 	//Constructeur
-	/*public Parking(String nom, int nbEtage, int nbAllee, int nbPlacemax) {
+	public Parking(String nom, int nbEtage, int nbAllee, int nbPlacemax) {
 		this.nom=nom;
 		this.nbEtage=nbEtage;
 		this.nbAllee=nbAllee;
@@ -26,13 +26,13 @@ public class Parking {
 
 
 		
-	}*/
+	}
 
-	public Parking(String nom, int nbEtage, int nbAllee,  int placeMax) {
+	public Parking(String nom, int nbEtage, int nbAllee,  int nbPlaceMax, int PlaceUtilise) {
 		this.nom = nom;
 		this.nbEtage = nbEtage;
 		this.nbAllee = nbAllee;
-		this.placeMax = placeMax;
+		this.placeMax = nbPlaceMax;
 		this.placeUtilise = placeUtilise;
 
 		mapParking = new Place[nbEtage][nbAllee];
