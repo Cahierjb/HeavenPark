@@ -3,14 +3,18 @@
 <struts>
     <package name="default" namespace ="/" extends="struts-default">
         <action name="Login">
-            <result>views/user/welcomeUser.jsp</result>
+            <result>views/login/login.jsp</result>
         </action>
         <action name="LoginProcess" class="heavenpark.controller.login.LoginCheck">
             <result name="success">views/welcomeUser.jsp</result>
-            <result name="failed">views/login/login.jsp</result>
+            <result name="failed">views/user/welcomeUser.jsp</result>
+        </action>
+        <action name="Register" >
+        	<result>views/login/register.jsp</result>
         </action>
         <action name="Welcome" class="heavenpark.controller.LinkAction">
             <result name="success">views/user/welcomeUser.jsp</result>
         </action>
+      
     </package>
 </struts>

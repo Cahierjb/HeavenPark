@@ -37,7 +37,7 @@
 					<div class="booking-form">
 						<div class="form-header">
 							<h1>HeavenPark</h1>
-							<span>Une escapade en toute tranquilité</span>
+							<span class="form-label">Une escapade en toute tranquilité</span>
 						</div>
 						<form>
 							<div class="row">
@@ -56,15 +56,19 @@
 							</div>
 							<div class="form-group">
 								<span class="form-label">Parking</span>
-								<input class="form-control" type="tel" placeholder="Enter your phone number">
+								<input class="form-control" type="tel" placeholder="A peu pret partout sur terre">
 							</div>
 							<div class="form-group">
-								<span class="form-label">Etage</span>
-								<input class="form-control" type="text" placeholder="Etage ">
+								<span class="form-label">Marque</span>
+								<input class="form-control" type="text" placeholder="plutot ferrari ou lambo ?">
 							</div>
 							<div class="form-group">
-								<span class="form-label">Allée</span>
-								<input class="form-control" type="text" placeholder="numéro d'allée">
+								<span class="form-label">Type de véhicule</span>
+								<input class="form-control" type="text" placeholder="fast or furious ?">
+							</div>
+							<div class="form-group">
+								<span class="form-label">couleur</span>
+								<input class="form-control" type="text" placeholder="important pour la retrouver de loin">
 							</div>
 							<div class="row">
 								<div class="col-sm-5">
@@ -72,12 +76,9 @@
 										<span class="form-label">Date de dépot</span>
 										<input class="form-control" type="date" required>
 									</div>
-									<div class="form-group">
-										<span class="form-label">Date de récupération</span>
-										<input class="form-control" type="date" required>
-									</div>
+									
 								</div>
-								<div class="col-sm-7">
+								<!--  <div class="col-sm-7">
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
@@ -129,7 +130,7 @@
 											</div>
 										</div>
 									</div>
-								</div>
+								</div>-->
 							</div>
 							<div class="form-btn">
 								<button class="submit-btn">Valider</button>
