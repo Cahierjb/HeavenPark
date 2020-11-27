@@ -3,6 +3,7 @@ package heavenpark.model;
 public class Place {
 
 	//Attributs
+	private static int placecree = 0;
 	private int idPlace;
 	private boolean pris;
 	private int etage;
@@ -11,7 +12,9 @@ public class Place {
 	private int idUser;
 
 	//Constructeurs
-	public Place(char etage, int allee, int idParking) {
+	public Place(int etage, int allee, int idParking) {
+		this.placecree ++;
+		this.idPlace = placecree;
 		this.etage = etage;
 		this.allee = allee;
 		this.idParking = idParking;

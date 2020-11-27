@@ -64,8 +64,7 @@ public final class DB_Operations implements ListeRequetes {
             //Verifaction si Update ou Create
             requetePrepare = con.prepareStatement(Exist_Utilisateur);
             requetePrepare.setInt(1, unUtilisateur.getIdUser());
-            ResultSet resultat = Lecture(requetePrepare);
-            if (resultat.next()) exist = true;
+            if ( Lecture(requetePrepare) != null) exist = true;
             System.out.println("test1");
             //Si l'utilisateur n'existe pas on le créé
             if (!exist) {
@@ -131,29 +130,28 @@ public final class DB_Operations implements ListeRequetes {
             boolean exist = false;
             System.out.println("test0");
             //Verifaction si Update ou Create
-            requetePrepare = con.prepareStatement(Exist_Utilisateur);
+            requetePrepare = con.prepareStatement(Exist_Parking);
             requetePrepare.setInt(1, unParking.GetidParking());
-            ResultSet resultat = Lecture(requetePrepare);
-            if (resultat.next()) exist = true;
+            if ( Lecture(requetePrepare) != null) exist = true;
             System.out.println("test1");
             //Si l'utilisateur n'existe pas on le créé
             if (!exist) {
-                requetePrepare = con.prepareStatement(Create_Utilisateur);
+                requetePrepare = con.prepareStatement(Create_Parking);
                 requetePrepare.setString(1, unParking.getNom());
-                requetePrepare.setString(2, unParking.getEtage());
-                requetePrepare.setDate(3, unParking.getnbAllee());
-                requetePrepare.setString(4, unParking.GetPlaceMax());
-                requetePrepare.setString(5, unParking.GetPlaceUtilise());
+                requetePrepare.setInt(2, unParking.getEtage());
+                requetePrepare.setInt(3,unParking.getnbAllee());
+                requetePrepare.setInt(4, unParking.GetPlaceMax());
+                requetePrepare.setInt(5, unParking.GetPlaceUtilise());
                 if (Ecriture(requetePrepare)) System.out.println("Parking créé");
                 else System.out.println("Le parking n'a pas pu être créé");
             }
             else{//sinon on l'update
                 requetePrepare = con.prepareStatement(Update_Utilisateur);
                 requetePrepare.setString(1, unParking.getNom());
-                requetePrepare.setString(2, unParking.getEtage());
-                requetePrepare.setDate(3, unParking.getnbAllee());
-                requetePrepare.setString(4, unParking.GetPlaceMax());
-                requetePrepare.setString(5, unParking.GetPlaceUtilise());
+                requetePrepare.setInt(2, unParking.getEtage());
+                requetePrepare.setInt(3,unParking.getnbAllee());
+                requetePrepare.setInt(4, unParking.GetPlaceMax());
+                requetePrepare.setInt(5, unParking.GetPlaceUtilise());
                 requetePrepare.setInt(6, unParking.GetidParking());
                 if( Ecriture(requetePrepare)) System.out.println("Parking modifié");
                 else System.out.println("Le Parking n'a pas pu être modifié");
@@ -202,8 +200,7 @@ public final class DB_Operations implements ListeRequetes {
             //Verifaction si Update ou Create
             requetePrepare = con.prepareStatement(Exist_Voiture);
             requetePrepare.setString(1, unVehicule.getImmatriculation());
-            ResultSet resultat = Lecture(requetePrepare);
-            if (resultat.next()) exist = true;
+            if ( Lecture(requetePrepare) != null) exist = true;
             System.out.println("test1");
             //Si l'utilisateur n'existe pas on le créé
             if (!exist) {
@@ -272,8 +269,7 @@ public final class DB_Operations implements ListeRequetes {
             //Verifaction si Update ou Create
             requetePrepare = con.prepareStatement(Exist_Place);
             requetePrepare.setInt(1, unPlace.getidPlace());
-            ResultSet resultat = Lecture(requetePrepare);
-            if (resultat.next()) exist = true;
+            if ( Lecture(requetePrepare) != null) exist = true;
             System.out.println("test1");
             //Si l'utilisateur n'existe pas on le créé
             if (!exist) {

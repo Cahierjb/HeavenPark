@@ -39,103 +39,65 @@
 							<h1>HeavenPark</h1>
 							<span class="form-label">Pour profiter d'une escapade en toute tranquillité</span>
 						</div>
-						<form>
+						<s:form action="Validate">
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
-										<span class="form-label">Nom</span>
-										<input class="form-control" type="text" placeholder="Entrer votre Nom">
+									    <span class="form-label">Immatriculation</span>
+                                        <input class="form-control" type="text" name="immatriculation" placeholder="Immatriculation du véhicule">
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
-										<span class="form-label">Immatriculation</span>
-										<input class="form-control" type="email" placeholder="Immatriculation du véhicule">
+										<span class="form-label">Couleur</span>
+                                        <input class="form-control" type="text" name="couleur" placeholder="Important pour la retrouver de loin">
 									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<span class="form-label">Parking</span>
-								<input class="form-control" type="tel" placeholder="A peu pret partout sur terre">
-							</div>
-							<div class="form-group">
-								<span class="form-label">Marque</span>
-								<input class="form-control" type="text" placeholder="plutot ferrari ou lambo ?">
-							</div>
-							<div class="form-group">
-								<span class="form-label">Type de véhicule</span>
-								<input class="form-control" type="text" placeholder="fast or furious ?">
-							</div>
-							<div class="form-group">
-								<span class="form-label">couleur</span>
-								<input class="form-control" type="text" placeholder="important pour la retrouver de loin">
 							</div>
 							<div class="row">
-								<div class="col-sm-5">
-									<div class="form-group">
-										<span class="form-label">Date de dépot</span>
-										<input class="form-control" type="date" required>
-									</div>
-									
-								</div>
-								<!--  <div class="col-sm-7">
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												<span class="form-label">Heures</span>
-												<select class="form-control">
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-													<option>6</option>
-													<option>7</option>
-													<option>8</option>
-													<option>9</option>
-													<option>10</option>
-													<option>11</option>
-													<option>12</option>
-												</select>
-												<span class="select-arrow"></span>
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="form-group">
-												<span class="form-label">Min</span>
-												<select class="form-control">
-													<option>05</option>
-													<option>10</option>
-													<option>15</option>
-													<option>20</option>
-													<option>25</option>
-													<option>30</option>
-													<option>35</option>
-													<option>40</option>
-													<option>45</option>
-													<option>50</option>
-													<option>55</option>
-												</select>
-												<span class="select-arrow"></span>
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="form-group">
-											<span class="form-label">AM/PM</span>
-												<select class="form-control">
-													<option>Matin</option>
-													<option>Après-Midi</option>
-												</select>
-												<span class="select-arrow"></span>
-											</div>
-										</div>
-									</div>
-								</div>-->
-							</div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Marque</span>
+                                        <input class="form-control" type="text" name="marque" placeholder="Plutot Ferrari ou Lambo ?">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Modele</span>
+                                        <input class="form-control" type="text" name="modele" placeholder="La plus rapide ou la plus belle">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Type de véhicule</span>
+                                        <input class="form-control" type="text" name="type" placeholder="fast or furious ?">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <span class="form-label">Parking</span>
+                                <input class="form-control" type="text" name="Parking" placeholder="Les bleus">
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Etage</span>
+                                        <input class="form-control" type="text" name="etage" placeholder="Les bleus">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Allée</span>
+                                        <input class="form-control" type="text" name="allee" placeholder="Les bleus">
+                                    </div>
+                                </div>
+                            </div>
 							<div class="form-btn">
-								<button class="submit-btn">Valider</button>
+								<s:submit value="Valider" class="login100-form-btn"/>
 							</div>
-						</form>
+						</s:form>
 					</div>
 				</div>
 			</div>

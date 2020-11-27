@@ -6,7 +6,7 @@ import heavenpark.model.*;
 
 public interface ListeRequetes {
 
-    String login = "select * from user where email= ? and password= ? ";
+    String login = "select * from utilisateur where email= ? and password= ? ";
 
     //Utilisateur
     String Exist_Utilisateur =
@@ -74,8 +74,8 @@ public interface ListeRequetes {
 
     //Voiture
     String Exist_Voiture =
-            "SELECT idVoiture " +
-                    "FROM Voiture where idVoiture = ?";
+            "SELECT immatriculation " +
+                    "FROM Voiture where immatriculation = ?";
 
     String Update_Voiture = 
             "UPDATE Voiture"+

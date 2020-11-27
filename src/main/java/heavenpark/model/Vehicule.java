@@ -36,7 +36,7 @@ public class Vehicule {
         return couleur;
     }
 
-    public void setCouleur(Color couleur) {
+    public void setCouleur(String couleur) {
         this.couleur = couleur;
     }
 
@@ -62,5 +62,21 @@ public class Vehicule {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+
+    public int getIdPlace() {
+        return idPlace;
+    }
+
+    public void setIdPlace(int idPlace) {
+        this.idPlace = idPlace;
     }
 }

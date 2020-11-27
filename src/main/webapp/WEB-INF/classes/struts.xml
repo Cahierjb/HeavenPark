@@ -7,14 +7,15 @@
         </action>
         <action name="LoginProcess" class="heavenpark.controller.login.LoginCheck">
             <result name="success">views/user/welcomeUser.jsp</result>
+            <result name="success_admin">views/user/welcomeAdmin.jsp</result>
             <result name="failed">views/login/login.jsp</result>
         </action>
         <action name="Register" class="heavenpark.controller.user.CreateUser">
         	<result>views/login/login.jsp</result>
         </action>
-        <action name="Welcome" class="heavenpark.controller.LinkAction">
-            <result name="success">views/user/welcomeUser.jsp</result>
+        <action name="Validate" class="heavenpark.controller.user.CreateVehicule">
+            <result name="success">views/user/Bravo.jsp</result>
+            <result name="failed">views/user/welcomeUser.jsp</result>
         </action>
-      
     </package>
 </struts>
