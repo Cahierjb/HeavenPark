@@ -6,7 +6,7 @@ public class Vehicule {
 
     //Attributs
     private String immatriculation;
-    private Color couleur;
+    private String couleur;
     private String marques;
     private String modele;
     private String type;
@@ -14,7 +14,7 @@ public class Vehicule {
     private int idPlace;
 
     //Constructor
-    public Vehicule(String immatriculation, Color couleur, String marques, String modele, String type) {
+    public Vehicule(String immatriculation, String couleur, String marques, String modele, String type) {
         this.immatriculation = immatriculation;
         this.couleur = couleur;
         this.marques = marques;
@@ -32,7 +32,7 @@ public class Vehicule {
         this.immatriculation = immatriculation;
     }
 
-    public Color getCouleur() {
+    public String getCouleur() {
         return couleur;
     }
 

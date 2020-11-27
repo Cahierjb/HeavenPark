@@ -66,6 +66,9 @@ public class Parking {
 	public int GetPlaceUtilise() {
 		return placeMax;
 	}
+	public int GetidParking() {
+		return idParking;
+	}
 	
 	//set
 	public void SetNom(String name) {

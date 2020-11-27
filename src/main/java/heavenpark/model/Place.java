@@ -5,7 +5,7 @@ public class Place {
 	//Attributs
 	private int idPlace;
 	private boolean pris;
-	private char etage;
+	private int etage;
 	private int allee;
 	private int idParking;
 	private int idUser;
@@ -19,7 +19,7 @@ public class Place {
 		
 	}
 
-	public Place(int idPlace, boolean pris, char etage, int allee, int idParking) {
+	public Place(int idPlace, boolean pris, int etage, int allee, int idParking) {
 		this.idPlace = idPlace;
 		this.pris = pris;
 		this.etage = etage;
@@ -28,6 +28,9 @@ public class Place {
 	}
 
 	//Accesseurs
+	public int getidPlace() {
+		return idPlace;
+	}
 	public boolean isPris() {
 		return pris;
 	}
@@ -36,11 +39,11 @@ public class Place {
 		this.pris = pris;
 	}
 
-	public char getEtage() {
+	public int getEtage() {
 		return etage;
 	}
 
-	public void setEtage(char etage) {
+	public void setEtage(int etage) {
 		this.etage = etage;
 	}
 
@@ -50,6 +53,12 @@ public class Place {
 
 	public void setAllee(int allee) {
 		this.allee = allee;
+	}
+	public int getidParking() {
+		return idParking;
+	}
+	public void setidParking(int id) {
+		this.idParking=id;
 	}
 
 	//Methodes
